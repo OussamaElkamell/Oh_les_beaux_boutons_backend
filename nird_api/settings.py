@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     # Third party
     'rest_framework',
     'rest_framework_simplejwt',
-
+    'corsheaders',
     # Local apps
     'users',
     'cards',
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-  
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -138,12 +138,12 @@ SIMPLE_JWT = {
     'BLACKLIST_AFTER_ROTATION': True,
 }
 
-# # CORS Settings
-# CORS_ALLOWED_ORIGINS = os.getenv(
-#     'CORS_ALLOWED_ORIGINS',
-#     'http://localhost:5173,http://localhost:3000,https://ohlesbeauxboutons-production.up.railway.app'
-# ).split(',')
-# CORS_ALLOW_ALL_ORIGINS = True
-# CORS_ALLOW_CREDENTIALS = True
+# CORS Settings
+CORS_ALLOWED_ORIGINS = os.getenv(
+    'CORS_ALLOWED_ORIGINS',
+    'http://localhost:5173,http://localhost:3000,https://ohlesbeauxboutons-production.up.railway.app'
+).split(',')
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 
