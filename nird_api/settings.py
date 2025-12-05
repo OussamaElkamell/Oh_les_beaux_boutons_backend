@@ -18,7 +18,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-change-this-in-production'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1', 'ohlesbeauxboutons-production.up.railway.app').split(',')
 
 # Application definition
 INSTALLED_APPS = [
@@ -137,7 +137,7 @@ SIMPLE_JWT = {
 # CORS Settings
 CORS_ALLOWED_ORIGINS = os.getenv(
     'CORS_ALLOWED_ORIGINS', 
-    'http://localhost:5173,http://localhost:3000'
+    'http://localhost:5173,http://localhost:3000','https://ohlesbeauxboutons-production.up.railway.app'
 ).split(',')
 
 CORS_ALLOW_CREDENTIALS = True
