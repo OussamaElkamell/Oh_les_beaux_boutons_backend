@@ -143,7 +143,6 @@ CORS_ALLOWED_ORIGINS = os.getenv(
     'CORS_ALLOWED_ORIGINS',
     'http://localhost:5173,http://localhost:3000,https://ohlesbeauxboutons-production.up.railway.app'
 ).split(',')
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
-
+CORS_ALLOW_CREDENTIALS = True 
+CORS_ALLOW_ALL_ORIGINS = False 
 
